@@ -25,3 +25,38 @@ def deps do
   ]
 end
 ```
+
+## Benchmark
+
+```bash
+$ mix run benchmark/default.exs
+Operating System: Linux
+CPU Information: Intel(R) Core(TM) i7-7500U CPU @ 2.70GHz
+Number of Available Cores: 4
+Available memory: 15.43 GB
+Elixir 1.9.0
+Erlang 22.0
+
+Benchmark suite executing with the following configuration:
+warmup: 2 s
+time: 5 s
+memory time: 0 ns
+parallel: 1
+inputs: none specified
+Estimated total run time: 21 s
+
+Benchmarking Generate 10 ids...
+Benchmarking Generate 100 ids...
+Benchmarking Genrate 1000 ids...
+
+Name                       ips        average  deviation         median         99th %
+Generate 10 ids        1867.05        0.54 ms    ±25.69%        0.51 ms        1.14 ms
+Generate 100 ids        188.21        5.31 ms    ±16.28%        5.11 ms        8.17 ms
+Genrate 1000 ids         18.81       53.17 ms     ±3.92%       52.79 ms       59.77 ms
+
+Comparison:
+Generate 10 ids        1867.05
+Generate 100 ids        188.21 - 9.92x slower +4.78 ms
+Genrate 1000 ids         18.81 - 99.27x slower +52.63 ms
+
+```
