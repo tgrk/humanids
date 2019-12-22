@@ -27,6 +27,8 @@ jobs:
 
       - run: mix compile
 
+      - run: mix coveralls.circle
+
       - run: echo "$OTP_VERSION $ELIXIR_VERSION" > .version_file
 
       - restore_cache:

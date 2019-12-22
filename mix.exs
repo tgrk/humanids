@@ -9,7 +9,8 @@ defmodule HumanIDs.MixProject do
       version: "0.1.0",
       elixir: "~> 1.9",
       start_permanent: Mix.env() == :prod,
-      deps: deps()
+      deps: deps(),
+      test_coverage: [tool: ExCoveralls]
     ]
   end
 
@@ -20,7 +21,8 @@ defmodule HumanIDs.MixProject do
       {:credo, "~> 1.0", only: :dev},
       {:dialyxir, "~> 0.5.0", only: [:dev, :test], runtime: false},
       {:benchee, "~> 1.0", only: :dev},
-      {:ex_doc, "~> 0.19", only: :dev}
+      {:ex_doc, "~> 0.19", only: :dev},
+      {:excoveralls, "~> 0.12.1", only: [:dev, :test]}
     ]
   end
 
