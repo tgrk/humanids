@@ -27,7 +27,7 @@ jobs:
 
       - run: mix compile
 
-      - run: mix coveralls.circle -t $COVERALLS_REPO_TOKEN
+      - run: mix coveralls.circle
 
       - run: echo "$OTP_VERSION $ELIXIR_VERSION" > .version_file
 
