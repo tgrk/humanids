@@ -4,11 +4,11 @@ defmodule HumanIDs do
   """
 
   @doc """
-  Generate Human Readble ID
+  Generate Human Readable ID
   """
   @spec generate(keyword()) :: binary()
   def generate(opts \\ []) do
-    keys = HumanIDs.Sequences.keys() |> List.delete(:number)
+    keys = HumanIDs.Sequences.keys()
 
     Range.new(2, Keyword.get(opts, :segments, 3))
     |> Enum.reduce([Integer.to_string(:rand.uniform(100))], fn _segment, acc ->

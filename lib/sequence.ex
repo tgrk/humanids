@@ -2,7 +2,6 @@ defmodule HumanIDs.Sequences do
   @moduledoc false
 
   @sequences %{
-    number: Enum.map(2..34, &(Integer.to_string/1)),
     adjective: ["adorable", "adventurous", "alluring", "amazing",
           "ambitious", "amusing", "astonishing", "attractive", "awesome",
           "bashful", "bawdy", "beautiful", "bewildered", "bizarre", "bouncy",
