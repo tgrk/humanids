@@ -1,5 +1,9 @@
 # HumanIDs
 
+[![CircleCI](https://circleci.com/gh/tgrk/humanids/tree/master.svg?style=svg)](https://circleci.com/gh/tgrk/humanids/tree/master)
+[![Hex pm](http://img.shields.io/hexpm/v/humanids.svg?style=flat)](https://hex.pm/packages/humanids)
+[![Coverage Status](https://coveralls.io/repos/github/tgrk/humanids/badge.svg?branch=master)](https://coveralls.io/github/tgrk/humanids?branch=master)
+
 Simple Elixir library that generates human-readable ids from a list of nouns and adjectives. It makes ids easy
 for communication with other humans.
 
