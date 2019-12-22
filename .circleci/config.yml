@@ -2,7 +2,7 @@ build:
     docker:
     - image: circleci/elixir:1.9.4
         environment:
-        MIX_ENV: test
+          MIX_ENV: test
 
     steps:
     - checkout
