@@ -6,9 +6,6 @@ on:
       - opened
       - synchronize
       - reopened
-  push:
-    branches:
-      - "*"
 
 env:
   MIX_ENV: test
