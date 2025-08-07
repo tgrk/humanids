@@ -1,5 +1,6 @@
 defmodule HumanIDsTest do
   use ExUnit.Case
+
   doctest HumanIDs
 
   describe "generate/0" do
