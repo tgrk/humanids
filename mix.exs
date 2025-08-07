@@ -19,7 +19,7 @@ defmodule HumanIDs.MixProject do
   defp deps do
     [
       {:credo, "~> 1.0", only: :dev},
-      {:dialyxir, "~> 0.5.0", only: [:dev, :test], runtime: false},
+      {:dialyxir, "~> 1.4.5", only: [:dev, :test], runtime: false},
       {:benchee, "~> 1.0", only: :dev},
       {:ex_doc, "~> 0.19", only: :dev},
       {:excoveralls, "~> 0.12.1", only: [:dev, :test]}
