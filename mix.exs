@@ -22,7 +22,7 @@ defmodule HumanIDs.MixProject do
       {:dialyxir, "~> 0.5.0", only: [:dev, :test], runtime: false},
       {:benchee, "~> 1.0", only: :dev},
       {:ex_doc, "~> 0.19", only: :dev},
-      {:excoveralls, "~> 0.12.1", only: [:dev, :test]}
+      {:excoveralls, "~> 0.18.5", only: [:dev, :test]}
     ]
   end
 
