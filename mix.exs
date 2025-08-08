@@ -6,7 +6,7 @@ defmodule HumanIDs.MixProject do
       app: :humanids,
       description: description(),
       package: package(),
-      version: "0.1.0",
+      version: "0.1.1",
       elixir: "~> 1.18",
       start_permanent: Mix.env() == :prod,
       deps: deps(),
