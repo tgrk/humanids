@@ -1,6 +1,16 @@
 version: 2
 updates:
-  - package-ecosystem: mix
-    directory: /
+  - package-ecosystem: "mix"
+    directory: "/"
     schedule:
-      interval: weekly
+      interval: "weekly"
+    open-pull-requests-limit: 10
+
+    # Optional but recommended:
+    rebase-strategy: "auto"
+    labels:
+      - "dependencies"
+      - "elixir"
+    reviewers:
+      - "tgrk"
+
