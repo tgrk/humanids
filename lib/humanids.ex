@@ -1,20 +1,33 @@
 defmodule HumanIDs do
   @moduledoc """
-  Documentation for HumanIDs.
+  Generate human-readable IDs from random word segments.
   """
 
   @doc """
-  Generate Human Readable ID
+  Generate a human-readable ID.
+
+  ## Options
+
+  - `:segments` - total number of hyphen-separated segments. Defaults to `3`.
+
+  ## Examples
+
+      iex> HumanIDs.generate() |> String.split("-") |> length()
+      3
+
+      iex> HumanIDs.generate(segments: 4) |> String.split("-") |> length()
+      4
   """
-  @spec generate(keyword()) :: binary()
+  @spec generate(keyword()) :: String.t()
   def generate(opts \\ []) do
     keys = HumanIDs.Sequences.keys()
+    segments = Keyword.get(opts, :segments, 3)
+    suffix = Integer.to_string(:rand.uniform(100))
 
     2
-    |> Range.new(Keyword.get(opts, :segments, 3))
-    |> Enum.reduce([Integer.to_string(:rand.uniform(100))], fn _segment, acc ->
-      [HumanIDs.Sequences.get_random(Enum.random(keys)) | acc]
-    end)
+    |> Range.new(segments)
+    |> Enum.map(fn _segment -> HumanIDs.Sequences.get_random(Enum.random(keys)) end)
+    |> Kernel.++([suffix])
     |> Enum.join("-")
   end
 end

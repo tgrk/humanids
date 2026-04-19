@@ -6,11 +6,12 @@ defmodule HumanIDs.MixProject do
       app: :humanids,
       description: description(),
       package: package(),
-      version: "0.1.1",
+      version: "0.2.0",
       elixir: "~> 1.18",
       start_permanent: Mix.env() == :prod,
       deps: deps(),
-      test_coverage: [tool: ExCoveralls]
+      test_coverage: [tool: ExCoveralls],
+      aliases: aliases()
     ]
   end
 
@@ -24,6 +25,13 @@ defmodule HumanIDs.MixProject do
       {:ex_doc, "~> 0.38", only: :dev},
       {:excoveralls, "~> 0.18.5", only: [:dev, :test]},
       {:styler, "~> 1.6", only: [:dev, :test], runtime: false}
+    ]
+  end
+
+  defp aliases do
+    [
+      quality: ["format", "credo --strict", "dialyzer"],
+      "test.coverage": ["test --cover"]
     ]
   end
 
