@@ -33,11 +33,11 @@ jobs:
         id: plt_cache
         with:
           key: |
-                ${{ runner.os }}-${{ steps.beam.outputs.elixir-version }}-${{ steps.beam.outputs.otp-version }}-plt
+            ${{ runner.os }}-${{ steps.beam.outputs.elixir-version }}-${{ steps.beam.outputs.otp-version }}-plt
           restore-keys: |
-                ${{ runner.os }}-${{ steps.beam.outputs.elixir-version }}-${{ steps.beam.outputs.otp-version }}-plt
+            ${{ runner.os }}-${{ steps.beam.outputs.elixir-version }}-${{ steps.beam.outputs.otp-version }}-plt
           path: |
-                priv/plts
+            _build/dev/*.plt
 
       # Create PLTs if no cache was found
       - name: Create PLTs
@@ -49,10 +49,10 @@ jobs:
         if: steps.plt_cache.outputs.cache-hit != 'true'
         id: plt_cache_save
         with:
-         key: |
-           ${{ runner.os }}-${{ steps.beam.outputs.elixir-version }}-${{ steps.beam.outputs.otp-version }}-plt
-         path: |
-          priv/plts
+          key: |
+            ${{ runner.os }}-${{ steps.beam.outputs.elixir-version }}-${{ steps.beam.outputs.otp-version }}-plt
+          path: |
+            _build/dev/*.plt
 
       - name: Run dialyzer
         run: mix dialyzer --format github --format dialyxir
