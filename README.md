@@ -23,7 +23,7 @@ Add `humanids` to your dependencies in `mix.exs`:
 ```elixir
 def deps do
   [
-    {:humanids, "~> 0.1.1"}
+    {:humanids, "~> 0.2.0"}
   ]
 end
 ```
