@@ -3,11 +3,6 @@ name: Dependabot auto-merge (minor/patch)
 on:
   pull_request:
     types: [opened, reopened, synchronize, ready_for_review]
-  workflow_run:
-    # Optional: if you prefer enabling auto-merge after CI finishes, use workflow_run.
-    # If you do, delete the pull_request trigger above and set the workflow name(s) here.
-    workflows: ["CI"]
-    types: [completed]
 
 permissions:
   contents: write
@@ -37,4 +32,3 @@ jobs:
           gh pr merge --auto --squash "${{ github.event.pull_request.html_url }}"
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
