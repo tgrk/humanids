@@ -50,7 +50,7 @@ defmodule HumanIDs.MixProject do
         "README.md"
       ],
       maintainers: ["Martin Wiso"],
-      licenses: ["Apache 2.0"],
+      licenses: ["Apache-2.0"],
       links: %{
         "GitHub" => "https://github.com/tgrk/humanids",
         "Issues" => "https://github.com/tgrk/humanids/issues"
